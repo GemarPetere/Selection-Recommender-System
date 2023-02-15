@@ -1,11 +1,13 @@
 "use strict";
 // Initialize Header, Body and Footer components
-$(function () {
-  $("#header").load("components/header.html");
-});
-$(function () {
-  $("#footer").load("components/footer.html");
-});
+// window.addEventListener("DOMContentLoaded", () => {
+  $(function () {
+    $("#header").load("components/header.html");
+  });
+  $(function () {
+    $("#footer").load("components/footer.html");
+  });
+// });
 
 // Initialize Map
 mapboxgl.accessToken =
@@ -101,21 +103,21 @@ map.on("click", function (e) {
     Create a popup, specify its options 
     and properties, and add it to the map.
   */
-    const popup = new mapboxgl.Popup({ offset: [0, -15] })
-    .setLngLat(feature.geometry.coordinates)
-    .setHTML(
-      `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
-    )
-    .addTo(map);
+const popup = new mapboxgl.Popup({ offset: [0, -15] })
+  .setLngLat(feature.geometry.coordinates)
+  .setHTML(
+    `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+  )
+  .addTo(map);
 
 /* 
 Add an event listener that runs
   when a user clicks on the map element.
 */
-map.on('click', (event) => {
+map.on("click", (event) => {
   // If the user clicked on one of your markers, get its information.
   const features = map.queryRenderedFeatures(event.point, {
-    layers: ['YOUR_LAYER_NAME'] // replace with your layer name
+    layers: ["YOUR_LAYER_NAME"], // replace with your layer name
   });
   if (!features.length) {
     return;
