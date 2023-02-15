@@ -5,17 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Selection Recommender System</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <header class="bg-white">
+    <div class="container mx-auto h-[6rem] flex items-center justify-between">
+      <h1 class="text-[20px] font-bold">Recommender System</h1>
+      <nav class="flex items-center gap-12 text-2xl uppercase font-medium">
+        <a href="#">Home</a>
+        <a href="#">PAGRO Program</a>
+        <a href="#">Contact</a>
+        <a href="#">Sign Up</a>
+        <div class="flex items-center bg-[#f0f2f5] rounded-full py-3 px-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-7 h-7 mr-3"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search Here..."
+            class="outline-none bg-transparent font-normal pr-5"
+          />
+        </div>
+      </nav>
+    </div>
+  </header>
+  <body>
+    <!-- Hero Section -->
+    <!-- <div class="h-[100vh - 6rem] flex items-center justify-center bg-[#9cc0f9]">
+      <h1 class="text-[2rem]">Map Here</h1>
+    </div> -->
+    <div id="map" style="width: 100%; height: calc(100vh - 6rem)"></div>
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script defer src="assets/js/main.js"></script>
-  </head>
-  <body class="container mx-auto">
-    <header id="header"></header>
-    <app-root></app-root>
-    <footer id="footer"></footer>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
