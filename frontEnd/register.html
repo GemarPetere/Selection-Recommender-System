@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
+    <title>Register</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,9 +13,192 @@
       rel="stylesheet"
     />
   </head>
+  <body >
+    <header id="header"></header>
+    <div class="flex items-center justify-center" style="height: calc(100vh - 6rem)">
+      <form
+        action="register.html"
+        id="registrationForm"
+        action="register"
+        method="POST"
+      >
+        <div class="shadow rounded-md w-[80rem]">
+          <div class="bg-white p-10">
+            <div class="grid grid-cols-12 gap-5">
+              <div class="col-span-12 sm:col-span-3">
+                <label
+                  for="last-name"
+                  class="block text-xl font-medium text-gray-700"
+                  >Last name</label
+                >
+                <input
+                  type="text"
+                  name="last-name"
+                  id="last-name"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+              <div class="col-span-12 sm:col-span-3">
+                <label
+                  for="first-name"
+                  class="block text-xl font-medium text-gray-700"
+                  >Full name</label
+                >
+                <input
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+              <div class="col-span-12 sm:col-span-3">
+                <label
+                  for="middle-name"
+                  class="block text-xl font-medium text-gray-700"
+                  >Middle name</label
+                >
+                <input
+                  type="text"
+                  name="middle-name"
+                  id="middle-name"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+              <div class="col-span-12 sm:col-span-3">
+                <label
+                  for="suffix"
+                  class="block text-xl font-medium text-gray-700"
+                  >Suffix</label
+                >
+                <input
+                  type="text"
+                  name="suffix"
+                  id="suffix"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+              <div class="col-span-12">
+                <label
+                  for="suffix"
+                  class="block text-xl font-medium text-gray-700"
+                  >Address</label
+                >
+                <input
+                  type="text"
+                  name="suffix"
+                  id="suffix"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+              <div class="col-span-4">
+                <label
+                  for="suffix"
+                  class="block text-xl font-medium text-gray-700"
+                  >Date</label
+                >
+                <input
+                  type="date"
+                  name="date"
+                  id="suffix"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+              <div class="col-span-3">
+                <label
+                  for="suffix"
+                  class="block text-xl font-medium text-gray-700"
+                  >Age</label
+                >
+                <input
+                  type="number"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  maxlength="3"
+                  name="suffix"
+                  id="suffix"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+              <div class="col-span-3">
+                <label
+                  for="suffix"
+                  class="block text-xl font-medium text-gray-700"
+                  >Sex</label
+                >
+                <select name="sex" id="sex" class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl">
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div class="col-span-4">
+                <label
+                  for="suffix"
+                  class="block text-xl font-medium text-gray-700"
+                  >Civil Status</label
+                >
+                <input
+                  type="text"
+                  name="civilStatus"
+                  id="civilStatus"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+              <div class="col-span-4">
+                <label
+                  for="suffix"
+                  class="block text-xl font-medium text-gray-700"
+                  >Religion</label
+                >
+                <input
+                  type="text"
+                  name="religion"
+                  id="religion"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+              <div class="col-span-4">
+                <label
+                  for="suffix"
+                  class="block text-xl font-medium text-gray-700"
+                  >Contact No.</label
+                >
+                <input
+                  type="text"
+                  name="contactNumber"
+                  id="contactNum"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+              <div class="col-span-12">
+                <label
+                  for="suffix"
+                  class="block text-xl font-medium text-gray-700"
+                  >Land Area</label
+                >
+                <input
+                  type="text"
+                  name="contactNumber"
+                  id="contactNum"
+                  autocomplete="given-name"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
 
-  <header id="header"></header>
-  <body>
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
@@ -23,5 +206,15 @@
     ></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      $("#loginForm").on("submit", function (e) {
+        e.preventDefault();
+
+        let email = $("#email-address").val();
+        let password = $("#password").val();
+
+        alert(`Email: ${email} Password: ${password}`);
+      });
+    </script>
   </body>
 </html>
