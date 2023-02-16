@@ -26,7 +26,12 @@
             Sign in to your account
           </h2>
         </div>
-        <form class="mt-8 space-y-6" id="loginForm" action="login" method="POST">
+        <form
+          class="mt-8 space-y-6"
+          id="loginForm"
+          action="login"
+          method="POST"
+        >
           <input type="hidden" name="remember" value="true" />
           <div class="-space-y-px rounded-md shadow-sm">
             <div>
@@ -84,6 +89,7 @@
             >
               Sign in
             </button>
+            <p class="text-center text-xl mt-2" >Don't have an Account? <a href="register.html" class="text-blue-500 hover:text-blue-600">click here</a></p>
           </div>
         </form>
       </div>
@@ -97,17 +103,14 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-
-      $("#loginForm").on("submit", function(e) {
+      $("#loginForm").on("submit", function (e) {
         e.preventDefault();
 
         let email = $("#email-address").val();
         let password = $("#password").val();
 
         alert(`Email: ${email} Password: ${password}`);
-
-      })
-
+      });
     </script>
   </body>
 </html>
