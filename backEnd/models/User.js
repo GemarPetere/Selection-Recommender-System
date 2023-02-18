@@ -14,10 +14,6 @@ const data = {
     type: String,
     trim: true,
   },
-  about: {
-    type: String,
-    trim: true,
-  },
   hashed_password: {
     type: String,
   },
@@ -25,19 +21,6 @@ const data = {
   role: {
     type: Number,
     default: 0,
-  },
-  history: {
-    type: Array,
-    default: [],
-  },
-  favoriteList: {
-    type: Schema.ObjectId,
-    ref: "Product",
-  },
-  phone: {
-    type: String,
-    trim: true,
-    unique: true,
   },
   address: {
     type: String,
@@ -47,50 +30,12 @@ const data = {
     type: String,
     trim: true,
   },
-  messenger: {
-    type: String,
-    trim: true,
-  },
   birthdate: {
     type: String,
     trim: true,
   },
-  photo: {
-    type: String,
-    default: "",
-  },
-  deviceId: {
-    type: String,
-    default: "",
-  },
-  isPhoneVerified: {
-    type: Boolean,
-    default: false,
-  },
-  isEmailVerified: {
-    type: Boolean,
-    default: false,
-  },
-  google: {
-    id: {
-      type: String,
-    },
-    metadata: {},
-  },
-  facebook: {
-    id: {
-      type: String,
-    },
-    metadata: {},
-  },
-  phoneOTP: String,
-  phoneOTPExpiration: Date,
   resetToken: String,
   expireToken: Date,
-  emailVerificationToken: String,
-  emailVerificationTokenExpiration: String,
-  long: { type: String, default: "120.9890" },
-  lat: { type: String, default: "14.6038" },
 };
 const userSchema = new Schema(data, { timestamps: true });
 
