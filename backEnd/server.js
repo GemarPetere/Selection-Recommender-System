@@ -30,7 +30,6 @@ app.use(
 app.use(express.json()); //n1
 app.use(morgan("dev"));
 app.use(cookieParser());
-
 app.use(expressValidator());
 
 
@@ -46,7 +45,10 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Expose-Headers", "X-Total-Count");
   next();
 });
+
+
 //API Routes
+app.use("/api/auth", require("./routes/auth"));
 
 
 
