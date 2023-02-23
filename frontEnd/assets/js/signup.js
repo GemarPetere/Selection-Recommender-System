@@ -1,8 +1,13 @@
 "use strict";
 
-import { registerUser } from "./common.js";
+import { loginUser } from "./common.js";
 
 const signupForm = document.getElementById("signupForm");
+const isUserLoggedIn = localStorage.getItem("user-token");
+
+if (isUserLoggedIn) {
+    window.location.href = "../pages/dashboard.html"
+}
 
 signupForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -19,9 +24,8 @@ signupForm.addEventListener("submit", function (e) {
     address: signupForm.elements["address"].value,
   };
 
-  registerUser(userInfo, route).then((res) => {
+  loginUser(userInfo, route).then((res) => {
     if (res.message === "successfully signup") {
-      localStorage.setItem("user-token", res.body.salt);
 
       Swal.fire({
         position: "top-end",
@@ -44,5 +48,7 @@ signupForm.addEventListener("submit", function (e) {
         timer: 2500,
       });
     }
+  }).catch(error => {
+    console.log(error);
   });
 });
