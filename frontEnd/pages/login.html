@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,7 +14,7 @@
     />
   </head>
   <header id="header"></header>
-  <body style="height: calc(100vh - 6rem)">
+  <body style="height: calc(100vh - 6rem) !important">
     <div
       class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
     >
@@ -89,28 +89,18 @@
             >
               Sign in
             </button>
-            <p class="text-center text-xl mt-2" >Don't have an Account? <a href="register.html" class="text-blue-500 hover:text-blue-600">click here</a></p>
+            <p class="text-center text-xl mt-2">
+              Don't have an Account?
+              <a href="register.html" class="text-blue-500 hover:text-blue-600"
+                >click here</a
+              >
+            </p>
           </div>
         </form>
       </div>
     </div>
-
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.min.js"
-      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-      $("#loginForm").on("submit", function (e) {
-        e.preventDefault();
-
-        let email = $("#email-address").val();
-        let password = $("#password").val();
-
-        alert(`Email: ${email} Password: ${password}`);
-      });
-    </script>
+    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/js/login.js"></script>
+    <script type="module" src="../assets/js/common.js"></script>
   </body>
 </html>

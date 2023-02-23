@@ -13,9 +13,12 @@
       rel="stylesheet"
     />
   </head>
-  <body >
+  <body>
     <header id="header"></header>
-    <div class="flex items-center justify-center" style="height: calc(100vh - 6rem)">
+    <div
+      class="flex items-center justify-center"
+      style="height: calc(100vh - 6rem)"
+    >
       <form
         action="register.html"
         id="registrationForm"
@@ -131,7 +134,11 @@
                   class="block text-xl font-medium text-gray-700"
                   >Sex</label
                 >
-                <select name="sex" id="sex" class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl">
+                <select
+                  name="sex"
+                  id="sex"
+                  class="mt-1 block w-full px-2 py-3 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-2xl"
+                >
                   <option value="">Select Gender</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -198,23 +205,9 @@
         </div>
       </form>
     </div>
-
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.min.js"
-      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-      $("#loginForm").on("submit", function (e) {
-        e.preventDefault();
-
-        let email = $("#email-address").val();
-        let password = $("#password").val();
-
-        alert(`Email: ${email} Password: ${password}`);
-      });
-    </script>
+    <script defer src="../assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/map.js"></script>
+    <script type="module" src="../assets/js/common.js"></script>
   </body>
 </html>
