@@ -1,12 +1,12 @@
 "use strict";
 
 import { loginUser } from "./common.js";
-
+import { checkLogin } from "./common.js";
 const signupForm = document.getElementById("signupForm");
 const isUserLoggedIn = localStorage.getItem("user-token");
 
-if (isUserLoggedIn) {
-    window.location.href = "../pages/dashboard.html"
+if (checkLogin()) {
+  window.location.href = "../pages/dashboard.html";
 }
 
 loginForm.addEventListener("submit", function (e) {

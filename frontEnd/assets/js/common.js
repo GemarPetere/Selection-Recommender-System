@@ -1,5 +1,19 @@
 import { apiBaseUrl } from "./_hosts.js";
 
+export function checkLogin() {
+  let token = localStorage.getItem("user-token");
+
+  if (token) {
+    if (token != "" && typeof token == "string") {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
+}
+
 export async function registerUser(userInfo, route) {
   const userData = {
     method: "POST",
