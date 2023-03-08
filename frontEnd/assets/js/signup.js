@@ -6,7 +6,7 @@ const signupForm = document.getElementById("signupForm");
 const isUserLoggedIn = localStorage.getItem("user-token");
 
 if (isUserLoggedIn) {
-    window.location.href = "../pages/dashboard.html"
+    window.location.href = "../dashboard.html"
 }
 
 signupForm.addEventListener("submit", function (e) {
@@ -36,8 +36,8 @@ signupForm.addEventListener("submit", function (e) {
       });
 
       setTimeout(() => {
-        window.location.href = "../pages/login.html";
-      }, 3000);
+        window.location.href = "../login.html";
+      }, 2600);
     } else {
       console.error(res.error);
       Swal.fire({

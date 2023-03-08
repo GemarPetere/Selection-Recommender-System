@@ -4,5 +4,5 @@ import { checkLogin } from "./common.js";
 if(checkLogin()){
   // Your code here
 }else{
-  window.location.href = "../pages/login.html"
+  window.location.href = "../login.html"
 }
