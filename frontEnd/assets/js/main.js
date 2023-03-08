@@ -17,3 +17,8 @@ document.head.appendChild(jqueryScript);
 let sweetAlertScript = document.createElement("script");
 sweetAlertScript.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11";
 document.head.appendChild(sweetAlertScript);
+
+let font = document.createElement("link");
+font.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap";
+font.rel = "stylesheet";
+document.head.appendChild(font)

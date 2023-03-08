@@ -9,7 +9,6 @@ const User = require("../models/User");
 
 
 exports.signup = (req, res) => {
-    console.log("req.body", req.body);
   
     User.findOne({ email: req.body?.email }, (err, user) => {
       if (err) {
