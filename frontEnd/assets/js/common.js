@@ -51,3 +51,22 @@ export async function loginUser(userInfo, route) {
     return `Cannot register new user, error is: ${error}`;
   }
 }
+
+export async function sendPostRequest(userInfo, route) {
+  const userData = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userInfo),
+  };
+
+  try {
+    const response = await fetch(apiBaseUrl + route, userData);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    return error;
+  }
+}
