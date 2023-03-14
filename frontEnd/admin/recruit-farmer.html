@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css" />
+    <link rel="stylesheet" href="plugins/select2/css/select2.min.css" />
+    <link
+      rel="stylesheet"
+      href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css"
+    />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
   </head>
   <body class="hold-transition sidebar-mini">
@@ -285,36 +290,100 @@
                         <input type="text" id="lastName" class="form-control" />
                       </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-4">
+                      <!-- Date dd/mm/yyyy -->
                       <div class="form-group">
-                        <label for="inputStatus">Status</label>
-                        <select
-                          id="inputStatus"
-                          class="form-control custom-select"
-                        >
-                          <option selected disabled>Select one</option>
-                          <option>On Hold</option>
-                          <option>Canceled</option>
-                          <option>Success</option>
-                        </select>
+                        <label>Date</label>
+
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"
+                              ><i class="far fa-calendar-alt"></i
+                            ></span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control"
+                            data-inputmask-alias="datetime"
+                            data-inputmask-inputformat="dd/mm/yyyy"
+                            data-mask
+                          />
+                        </div>
+                        <!-- /.input group -->
                       </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-4">
                       <div class="form-group">
-                        <label for="inputClientCompany">Client Company</label>
+                        <label for="inputName">Age</label>
                         <input
-                          type="text"
-                          id="inputClientCompany"
+                          type="number"
+                          id="lastName"
                           class="form-control"
                         />
                       </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-4">
+                      <div class="form-group" data-select2-id="1">
+                        <label>Gender</label>
+                        <select
+                          class="form-control select2bs4 select2-hidden-accessible"
+                          style="width: 100%"
+                          data-select2-id="1"
+                          tabindex="-1"
+                          aria-hidden="true"
+                        >
+                          <option selected="selected" data-select2-id="01">
+                            Select a Gender
+                          </option>
+                          <option data-select2-id="02">Male</option>
+                          <option data-select2-id="03">Female</option>
+                          <option data-select2-id="04">Others...</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group" data-select2-id="2">
+                        <label>Civil Status</label>
+                        <select
+                          class="form-control select2bs4 select2-hidden-accessible"
+                          style="width: 100%"
+                          data-select2-id="2"
+                          tabindex="-1"
+                          aria-hidden="true"
+                        >
+                          <option selected="selected" data-select2-id="01">
+                            Single
+                          </option>
+                          <option data-select2-id="02">Married</option>
+                          <option data-select2-id="03">Divorced</option>
+                          <option data-select2-id="04">Separated</option>
+                          <option data-select2-id="05">Widowed</option>
+                          <option data-select2-id="06">Never Married</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-4">
                       <div class="form-group">
-                        <label for="inputProjectLeader">Project Leader</label>
+                        <label for="inputClientCompany">Religion</label>
+                        <input type="text" id="religion" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label for="inputName">Contact Number</label>
                         <input
-                          type="text"
-                          id="inputProjectLeader"
+                          type="number"
+                          id="lastName"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label for="inputProjectLeader">Land Area (sqm)</label>
+                        <input
+                          type="number"
+                          id="landArea"
                           class="form-control"
                         />
                       </div>
@@ -342,7 +411,7 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <div id="map" style="height:381px;"></div>
+                  <div id="map" style="height: 381px"></div>
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -351,12 +420,11 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <a href="#" class="btn btn-secondary">Cancel</a>
-              <input
-                type="submit"
-                value="Add New Farmer"
-                class="btn btn-success float-right"
-              />
+              <button
+                type="button"
+                id="addNewFarmer"
+                class="btn btn-success"
+              >Add New Farmer</button>
             </div>
           </div>
         </section>
@@ -384,9 +452,32 @@
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js"></script>
     <script src="dist/js/sidebar.js"></script>
+    <script src="plugins/select2/js/select2.full.min.js"></script>
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/inputmask/jquery.inputmask.min.js"></script>
 
     <script>
       "use strict";
+
+      document.getElementById("addNewFarmer").addEventListener("click", function(){
+        alert("Farmer Added!")
+      })
+
+      $(function () {
+        //Initialize Select2 Elements
+        $(".select2").select2();
+
+        //Initialize Select2 Elements
+        $(".select2bs4").select2({
+          theme: "bootstrap4",
+        });
+        //Datemask dd/mm/yyyy
+        $("#datemask").inputmask("dd/mm/yyyy", { placeholder: "dd/mm/yyyy" });
+        //Datemask2 mm/dd/yyyy
+        $("#datemask2").inputmask("mm/dd/yyyy", { placeholder: "mm/dd/yyyy" });
+        //Money Euro
+        $("[data-mask]").inputmask();
+      });
 
       // Initialize Map
       mapboxgl.accessToken =
